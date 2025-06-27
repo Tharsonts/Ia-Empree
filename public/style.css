@@ -1,0 +1,181 @@
+body {
+  background: linear-gradient(120deg, #e0e7ff 0%, #f4f6fb 100%);
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  min-height: 100vh;
+}
+.container-chat {
+  background: #fff;
+  max-width: 480px;
+  margin: 56px auto 0 auto;
+  padding: 36px 18px 18px 18px;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(42,77,143,0.13);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  height: 80vh;
+}
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  color: #2a4d8f;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.logo-ia {
+  font-size: 2.1em;
+  vertical-align: middle;
+  margin-right: 6px;
+  filter: drop-shadow(0 2px 4px #b6c6e3);
+}
+.chat-area {
+  flex: 1;
+  background: #f4f6fb;
+  border-radius: 16px;
+  padding: 18px 10px 10px 10px;
+  margin-bottom: 12px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(42,77,143,0.06);
+  min-height: 320px;
+  max-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.balao {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  animation: fadeIn 0.5s;
+}
+.balao.ia {
+  align-self: flex-start;
+}
+.balao.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+.balao .avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e3f0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  box-shadow: 0 2px 8px rgba(42,77,143,0.10);
+}
+.balao .msg {
+  padding: 14px 18px;
+  border-radius: 18px;
+  max-width: 320px;
+  font-size: 1.09rem;
+  line-height: 1.6;
+  word-break: break-word;
+  box-shadow: 0 2px 8px rgba(42,77,143,0.10);
+  background: #fff;
+  border: 1.5px solid #e3f0ff;
+  transition: background 0.2s, border 0.2s;
+}
+.balao.ia .msg {
+  background: linear-gradient(100deg, #e3f0ff 80%, #f7faff 100%);
+  color: #2a4d8f;
+  border: 1.5px solid #b6c6e3;
+}
+.balao.user .msg {
+  background: linear-gradient(90deg, #2a4d8f 60%, #4f8cff 100%);
+  color: #fff;
+  border: 1.5px solid #2a4d8f;
+}
+.chat-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+#chatInput {
+  flex: 1;
+  padding: 13px 15px;
+  border: 1.5px solid #b6c6e3;
+  border-radius: 9px;
+  font-size: 1.09rem;
+  background: #f7faff;
+  transition: border 0.2s;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+#chatInput:focus {
+  border: 1.5px solid #2a4d8f;
+  outline: none;
+  background: #eaf1ff;
+}
+#btnEnviar {
+  padding: 0 22px;
+  background: linear-gradient(90deg, #2a4d8f 60%, #4f8cff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 1.09rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(42,77,143,0.10);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#btnEnviar:hover {
+  background: linear-gradient(90deg, #18305b 60%, #2a4d8f 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+.loader {
+  border: 3px solid #e3f0ff;
+  border-top: 3px solid #2a4d8f;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+footer {
+  text-align: center;
+  margin: 44px 0 18px 0;
+  color: #888;
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
+@media (max-width: 600px) {
+  .container-chat {
+    max-width: 98vw;
+    margin: 18px 2vw 0 2vw;
+    padding: 12px 2vw 12px 2vw;
+    min-height: 80vh;
+  }
+  .chat-area {
+    min-height: 180px;
+    max-height: 50vh;
+  }
+  .balao .msg {
+    max-width: 90vw;
+    font-size: 1rem;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+} 
